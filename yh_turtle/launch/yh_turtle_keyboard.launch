@@ -1,0 +1,18 @@
+<launch>
+    <arg name="r" default="128" />
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" >
+        <remap from="cmd_vel" to="/turtle1/cmd_vel" />
+    </node>
+    <!-- <node pkg="turtlesim" type="turtlesim_node" name="turtlesim1" />  -->
+    <!-- <group ns="1"> -->
+    <!-- <node pkg="turtlesim" type="turtlesim_node" name="turtlesim2" />  -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" /> 
+    <node pkg="yh_turtle" type="yh_turtle_keyboard.py" name="yh_turtle_keyboard_pen" output="screen" />
+    <param name="/turtlesim/background_r" value="$(arg r)" />
+    <param name="/turtlesim/background_g" value="122" />
+    <param name="/turtlesim/background_b" value="0" />
+
+
+    <!-- </group>     -->
+</launch>
+
